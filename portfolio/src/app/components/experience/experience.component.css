@@ -1,0 +1,38 @@
+.conteiner{
+  padding: 40vh;
+  margin: auto;
+}
+
+.experence{
+  padding-bottom:6em;
+}
+
+.experence .dates{
+  padding-top: 1em;
+  width: 15%;
+  float: left;
+
+
+}
+.experence .position{
+  width: 85%;
+  float: left;
+
+
+}
+.experence .position h3{
+  margin: 0px;
+  margin-bottom: 0.1em;
+  font-size: x-large;
+
+}
+.experence .position a{
+text-decoration: none;
+color:#eeeeee
+}
+.experence .position a:hover{
+  text-decoration: none;
+  color: #ffd369;
+  background-color: transparent;
+
+  }

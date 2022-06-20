@@ -1,0 +1,81 @@
+.conteiner {
+  padding: 40vh;
+  margin: auto;
+}
+
+/* NAVBAR */
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  bottom: 10vh;
+  width: 2%;
+  display: block;
+}
+
+.navbar-brand{
+  color: #eeeeee;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: rotate(-180deg);
+  display: block;
+  font-size: large;
+  padding: 2em;
+  letter-spacing: 0em;
+  overflow: hidden;
+  position: fixed;
+  top: 30vh;
+  width: 2%;
+  display: block;
+}
+
+.nav-link {
+  color: #eeeeee;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: rotate(-180deg);
+  display: block;
+  font-size: small;
+  padding: 1em;
+  letter-spacing: 0em
+}
+
+.nav-link:hover {
+  color: #ffd369;
+}
+
+.nav-link.active {
+  color: #ffd369;
+  background-color: transparent;
+  font-size: medium;
+}
+
+
+.socialNetwork {
+  overflow: hidden;
+  position: fixed;
+  bottom: 1vh;
+  right: 10px;
+
+  display: block;
+}
+
+
+.nav-social{
+  color: #eeeeee;
+
+  display: block;
+  font-size: medium;
+  padding: 1em;
+  letter-spacing: 0em
+}
+
+.nav-social:hover {
+  color: #ffd369;
+}
+
+
+
+/* Home */
+
+
+

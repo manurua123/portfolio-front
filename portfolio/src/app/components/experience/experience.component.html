@@ -1,0 +1,21 @@
+<div class="conteiner">
+  <p>Experience works!</p>
+  <div *ngFor="let experence of experiences; index as i">
+    <div class="experence">
+      <div class="dates">
+        <p>
+          {{ getYear(experence.begin) }}
+          <span *ngIf="experence.end"> - {{ getYear(experence.end) }}</span>  <span *ngIf="!experence.end"> - act.</span>
+        </p>
+      </div>
+      <div class="position">
+        <h3>{{ experence.position }}</h3>
+        <h4>
+          <a *ngIf="experence.companyLink" href="{{ experence.companyLink }}" target="”_blank”">
+            {{ experence.company }}</a>
+            <span *ngIf="!experence.companyLink">  {{ experence.company }} </span>
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
