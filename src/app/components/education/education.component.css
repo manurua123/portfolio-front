@@ -1,4 +1,55 @@
 .conteiner{
-  padding: 40vh;
+  padding: 10vh 15em;
   margin: auto;
 }
+
+
+mat-card{
+  height: 30em;
+  background-color: transparent;
+  color: #eeeeee;
+  padding: 2em 4em;
+  border-radius: 2px;
+
+}
+mat-card-title{
+  padding-bottom: 1em;
+}
+mat-card-subtitle{
+  height: 4em;
+}
+
+
+
+.cardImg{
+  width: 10%;
+
+}
+.cardImg img{
+  width: auto;
+  height: 100%;
+}
+
+
+.module {
+  background: #222;
+}
+
+mat-card a{
+  text-decoration: none;
+  color: #e7e7e7;
+}
+
+mat-progress-bar {
+  width: 90%;
+  margin: 0px 5%;
+  position: absolute;
+  left: 0px;
+  bottom: 1em;
+
+}
+mat-card a:hover{
+  color: #ffd369;
+}
+
+

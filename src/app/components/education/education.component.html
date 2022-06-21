@@ -1,21 +1,31 @@
-<div class="conteiner" >
-  <h2>Educacion</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet exercitationem
-    rem illo accusamus, magni delectus ipsa a eligendi. Numquam maiores illum
-    laboriosam voluptatum. Maiores itaque enim deserunt modi nesciunt
-    necessitatibus!
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet exercitationem
-    rem illo accusamus, magni delectus ipsa a eligendi. Numquam maiores illum
-    laboriosam voluptatum. Maiores itaque enim deserunt modi nesciunt
-    necessitatibus!
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet exercitationem
-    rem illo accusamus, magni delectus ipsa a eligendi. Numquam maiores illum
-    laboriosam voluptatum. Maiores itaque enim deserunt modi nesciunt
-    necessitatibus!
-  </p>
+<div class="conteiner">
+
+  <h2>Educacion works!</h2>
+
+  <swiper [spaceBetween]="30" class="mySwiper" [slidesPerView]="'auto'">
+    <ng-template swiperSlide *ngFor="let course of courses; index as i">
+
+      <mat-card style="width:100%" class="module">
+        <mat-card-title>{{course.career}} </mat-card-title>
+        <mat-card-subtitle>
+          <a class="cardImg" href="{{course.link}}" target="_blank">
+            <img src="{{course.img}}">
+            {{course.university}}
+          </a>
+        </mat-card-subtitle>
+        <div class="mat-description">
+          <p>{{course.description}}</p>
+        </div>
+        <div class="mat-info">
+          <p> <span style="font-weight:bold">Año: </span>{{getYear(course.begin)}}{{dateEnd(course)}}. </p>
+          <p *ngIf="course.duration"> <span style="font-weight:bold">Duracion:</span> {{course.duration}}. </p>
+        </div>
+        <div *ngIf="course.certification">
+          <a href="{{course.certification}}" target="_blank">
+            <button mat-stroked-button color="warning">Certificado</button></a>
+        </div>
+        <mat-progress-bar color="accent" mode="determinate" value={{course.progress}}></mat-progress-bar>
+      </mat-card>
+    </ng-template>
+  </swiper>
 </div>

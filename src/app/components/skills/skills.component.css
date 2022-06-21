@@ -1,4 +1,39 @@
-.conteiner{
-  padding: 40vh;
+.conteiner {
+  padding: 10vh 15em;
   margin: auto;
+}
+.skill-conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-box {
+  width: 30%;
+  background-color: #252525;
+  text-align: center;
+}
+.skills-img {
+  width: 100%;
+}
+.skills-img img {
+  width: 60%;
+  height: auto;
+  margin: auto;
+}
+
+/* Gradiente */
+
+.module-border-wrap {
+  padding: 1rem;
+  position: relative;
+  background: linear-gradient(to top, rgba(37, 37, 37, 1), rgba(255, 211, 105, 1));
+  padding: 2px;
+  border-radius: 2px;
+
+}
+
+.module {
+  border-radius: 2px;
+  background: #252525;
+  padding: 3rem;
 }

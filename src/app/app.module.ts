@@ -10,7 +10,7 @@ import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { SwiperModule } from 'swiper/angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +27,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent],
