@@ -1,6 +1,8 @@
 import { Experience } from './../../models/experience';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ExperienceDialogComponent } from './experience-dialog/experience-dialog.component';
 
 @Component({
   selector: 'app-experience',
@@ -47,11 +49,30 @@ export class ExperienceComponent implements OnInit {
 
 
   ];
-  constructor() { }
+
+  constructor(public dialog: MatDialog,) { }
   getYear(date:Date){
     return moment(date).format('YYYY')
   }
   ngOnInit(): void {
   }
+
+
+
+  openDialog(data?: Experience) {
+    let dialogRef = this.dialog.open(ExperienceDialogComponent );
+    let instance = dialogRef.componentInstance;
+    if(data){
+      instance.isDetailed = true;
+      instance.dataRef = data
+    }
+    else{
+      instance.isDetailed = false;
+    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 
 }

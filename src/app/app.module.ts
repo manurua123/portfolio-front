@@ -4,6 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+
 import { HomeComponent } from './components/home/home.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
@@ -11,6 +14,11 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SwiperModule } from 'swiper/angular';
+import { EducationDialogComponent } from './components/education/education-dialog/education-dialog.component';
+import { ExperienceDialogComponent } from './components/experience/experience-dialog/experience-dialog.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +28,8 @@ import { SwiperModule } from 'swiper/angular';
     SkillsComponent,
     PortfolioComponent,
     NavbarComponent,
+    EducationDialogComponent,
+    ExperienceDialogComponent,
 
   ],
   imports: [
@@ -27,9 +37,20 @@ import { SwiperModule } from 'swiper/angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    SwiperModule
+    SwiperModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+
   ],
-  providers: [],
+  providers: [
+    MatDatepickerModule,
+    MatNativeDateModule,
+    {
+      provide: MAT_DATE_LOCALE, useValue: 'es-ES'
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

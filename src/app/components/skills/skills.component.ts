@@ -11,6 +11,8 @@ export class SkillsComponent implements OnInit {
   skills: Array<SkillCategory> = [
     {cod:1,
     tittle: 'Diseño',
+    img:'bi bi-box',
+    description:"  ",
     skills:[
       {
       cod:1,
@@ -65,6 +67,7 @@ export class SkillsComponent implements OnInit {
   },
   {cod:2,
     tittle: 'WEB',
+    img:'bi bi-code-slash',
     skills:[
       {
       cod:6,
@@ -126,6 +129,7 @@ export class SkillsComponent implements OnInit {
   },
   {cod:3,
     tittle: 'MGMT',
+    img:'bi bi-clipboard-data',
     skills:[
       {
       cod:14,

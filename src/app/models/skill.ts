@@ -9,4 +9,7 @@ export interface SkillCategory {
   cod: number;
   tittle:string;
   skills:Skill[];
+  img?: string;
+  description?:string;
+
 }

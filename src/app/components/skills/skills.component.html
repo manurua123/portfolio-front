@@ -2,12 +2,11 @@
   <h2>Skills!</h2>
   <div class="skill-conteiner">
     <div class="skill-box module-border-wrap" *ngFor="let skill of skills">
-      <div>
-        <img class="skill-icon">
-
         <div class="module">
+          <i class="icon {{skill.img}}"></i>
           <h3 class="skill-tittle"> {{skill.tittle}}</h3>
-          <mat-grid-list cols="3" class="skills-img">
+          <p class="skill-description">{{skill.description}}</p>
+          <mat-grid-list cols="4" class="skills-img">
             <mat-grid-tile *ngFor="let icon of ramdomList(skill.skills); index as i">
               <a href="{{icon.link}}" target="_blank">
                 <img src="{{icon.img}}" alt="{{icon.name}}">
@@ -18,4 +17,4 @@
       </div>
     </div>
   </div>
-</div>
+

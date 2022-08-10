@@ -1,5 +1,5 @@
 export interface Education {
-  cod: number;
+cod?: number;
   career: string;
   university: string;
   img?:string;
@@ -9,5 +9,5 @@ export interface Education {
   duration?: string;
   begin: Date;
   end?: Date;
-  progress: number;
+  progress?: number;
 }

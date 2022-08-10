@@ -1,5 +1,6 @@
 <div class="conteiner">
   <h2>Experience works!</h2>
+  <button mat-icon-button (click)="openDialog()"><mat-icon>add</mat-icon></button>
   <div *ngFor="let experence of experiences; index as i">
     <div class="experence">
       <div class="dates">
@@ -9,7 +10,7 @@
         </p>
       </div>
       <div class="position">
-        <h3>{{ experence.position }}</h3>
+        <h3>{{ experence.position }} <button  mat-icon-button (click)="openDialog(experence)"><mat-icon>edit</mat-icon></button></h3>
         <h4>
           <a *ngIf="experence.companyLink" href="{{ experence.companyLink }}" target="”_blank”">
             {{ experence.company }}</a>
@@ -18,4 +19,5 @@
       </div>
     </div>
   </div>
+
 </div>

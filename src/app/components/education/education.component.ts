@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 
 import { SwiperComponent } from "swiper/angular";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 // import Swiper core and required modules
-import SwiperCore, { Pagination } from "swiper";
+import SwiperCore, { Grid, Pagination } from "swiper";
 import { Education } from 'src/app/models/education';
+import { EducationDialogComponent } from './education-dialog/education-dialog.component';
 
 // install Swiper modules
-SwiperCore.use([Pagination]);
+SwiperCore.use([Pagination, Grid]);
 
 @Component({
   selector: 'app-education',
@@ -82,7 +84,7 @@ export class EducationComponent implements OnInit {
 
 
   ];
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
   getYear(date: Date) {
     return moment(date).format('YYYY')
   }
@@ -94,6 +96,21 @@ export class EducationComponent implements OnInit {
 
   }
   ngOnInit(): void {
+  }
+
+  openDialog(data?: Education) {
+    let dialogRef = this.dialog.open(EducationDialogComponent );
+    let instance = dialogRef.componentInstance;
+    if(data){
+      instance.isDetailed = true;
+      instance.dataRef = data
+    }
+    else{
+      instance.isDetailed = false;
+    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

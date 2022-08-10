@@ -1,0 +1,61 @@
+
+  <h2>Create a new owner</h2>
+  <form #createForm="ngForm">
+    <mat-form-field>
+      <input
+        required="true"
+        [(ngModel)]="this.dataRef.position"
+        [ngModelOptions]="{standalone: true}"
+        matInput
+        placeholder="Puesto"
+        type="text"
+        maxlength="60"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        required="true"
+        [(ngModel)]="this.dataRef.company"
+        [ngModelOptions]="{standalone: true}"
+        matInput
+        placeholder="Empresa"
+        type="text"
+        maxlength="60"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        [(ngModel)]="this.dataRef.companyLink"
+        [ngModelOptions]="{standalone: true}"
+        matInput
+        placeholder="Web de la empresa"
+        type="text"
+        maxlength="120"
+      />
+
+    </mat-form-field>
+
+    <mat-form-field   style="width: 45%; margin-right: 5%;">
+      <mat-label>Fecha de ingreo</mat-label>
+      <input  required="true"  [ngModelOptions]="{standalone: true}" matInput [matDatepicker]="begin" [(ngModel)]="this.dataRef.begin">
+      <mat-datepicker-toggle   matSuffix [for]="begin"></mat-datepicker-toggle>
+      <mat-datepicker  #begin></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field  style="width: 45%; margin-left: 5%;">
+      <mat-label>Fecha de fin</mat-label>
+      <input matInput [ngModelOptions]="{standalone: true}" [matDatepicker]="end" [(ngModel)]="this.dataRef.end">
+      <mat-datepicker-toggle   matSuffix [for]="end"></mat-datepicker-toggle>
+      <mat-datepicker  #end></mat-datepicker>
+    </mat-form-field>
+
+    <button
+      [disabled]="createForm.form.invalid"
+      mat-raised-button
+      type="submit"
+      (click)="save()"
+    >
+      Guardar
+    </button>
+  </form>
+
+
