@@ -1,5 +1,7 @@
 import { Skill, SkillCategory } from './../../models/skill';
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
 
 @Component({
   selector: 'app-skills',
@@ -188,13 +190,28 @@ export class SkillsComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog,) { }
 
   ngOnInit(): void {
   }
 
   ramdomList(array: Skill[]){
     return array.sort(function() { return Math.random() - 0.5 });
+  }
+
+  openDialog(data?: Skill) {
+    let dialogRef = this.dialog.open(SkillsDialogComponent );
+    let instance = dialogRef.componentInstance;
+    if(data){
+      instance.isDetailed = true;
+      instance.dataRef = data
+    }
+    else{
+      instance.isDetailed = false;
+    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

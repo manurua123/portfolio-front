@@ -6,8 +6,6 @@ cod?: number;
   link?: string;
   description?: string;
   certification?:string;
-  duration?: string;
-  begin: Date;
-  end?: Date;
+  begin: Date ;
   progress?: number;
 }

@@ -1,105 +1,50 @@
 <h2>Create a new owner</h2>
-<form #createForm="ngForm">
-  <mat-form-field>
-    <input
-      required="true"
-      [(ngModel)]="this.dataRef.career"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      placeholder="Titulo"
-      type="text"
-      maxlength="60"
-    />
+<form [formGroup]="requiredForm" (ngSubmit)="save()" novalidate>
+  <mat-form-field appearance="outline">
+    <mat-label>Titulo</mat-label>
+
+    <input required="true" [(ngModel)]="this.dataRef.career" formControlName="career" matInput
+       type="text" maxlength="60" />
   </mat-form-field>
-  <mat-form-field>
-    <input
-      required="true"
-      [(ngModel)]="this.dataRef.university"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      placeholder="Institucion "
-      type="text"
-      maxlength="60"
-    />
+  <mat-form-field appearance="outline">
+    <mat-label>Institucion</mat-label>
+    <input required="true" [(ngModel)]="this.dataRef.university" formControlName="university" matInput
+      type="text" maxlength="60" />
   </mat-form-field>
 
-  <mat-form-field>
-    <input
-      [(ngModel)]="this.dataRef.link"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      placeholder="Link de la Institucion"
-      type="text"
-      maxlength="120"
-    />
-    <div>
-      <p>previw</p>
-      <img >
-    </div>
+  <mat-form-field appearance="outline">
+    <mat-label>Url Institucion</mat-label>
+    <input [(ngModel)]="this.dataRef.link" formControlName="link" matInput
+       type="text" maxlength="120" />
+
   </mat-form-field>
-  <mat-form-field>
-    <textarea
-      style="resize: none"
-      [(ngModel)]="this.dataRef.description"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      placeholder="Descripcion"
-      type="text"
-      maxlength="400"
-    ></textarea>
+  <mat-form-field appearance="outline">
+    <mat-label>Descripcion</mat-label>
+    <textarea style="resize: none" [(ngModel)]="this.dataRef.description" formControlName="description"
+      matInput  type="text" maxlength="400"></textarea>
   </mat-form-field>
 
-  <mat-slider
-    style="width: 100%"
-    [displayWith]="formatLabel"
-    [(ngModel)]="this.dataRef.progress"
-    [ngModelOptions]="{ standalone: true }"
-    thumbLabel
-    min="1"
-    max="100"
-  ></mat-slider>
-
-  <mat-form-field style="width: 45%; margin-right: 5%">
-    <input
-      [(ngModel)]="this.dataRef.duration"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      placeholder="Duracion"
-      type="text"
-      maxlength="120"
-    />
-  </mat-form-field>
+  <mat-label>Progreso</mat-label>
+  <mat-slider style="width: 100%" [displayWith]="formatLabel" [(ngModel)]="this.dataRef.progress"
+  formControlName="progress" thumbLabel min="1" max="100"> </mat-slider>
 
   <mat-form-field style="width: 45%; margin-right: 5%">
     <mat-label>Fecha de ingreo</mat-label>
-    <input
-      required="true"
-      [ngModelOptions]="{ standalone: true }"
-      matInput
-      [matDatepicker]="begin"
-      [(ngModel)]="this.dataRef.begin"
-    />
+    <input required="true" [ngModelOptions]="{ standalone: true }" matInput [matDatepicker]="begin"
+      [(ngModel)]="this.dataRef.begin" />
     <mat-datepicker-toggle matSuffix [for]="begin"></mat-datepicker-toggle>
     <mat-datepicker #begin></mat-datepicker>
   </mat-form-field>
-  <mat-form-field style="width: 45%; margin-left: 5%">
-    <mat-label>Fecha de fin</mat-label>
-    <input
-      matInput
-      [ngModelOptions]="{ standalone: true }"
-      [matDatepicker]="end"
-      [(ngModel)]="this.dataRef.end"
-    />
-    <mat-datepicker-toggle matSuffix [for]="end"></mat-datepicker-toggle>
-    <mat-datepicker #end></mat-datepicker>
+
+
+  <mat-form-field appearance="outline" *ngIf="dataRef.progress==100">
+    <mat-label>Certificado</mat-label>
+    <input style="resize: none" [(ngModel)]="this.dataRef.certification"
+      matInput  type="text" maxlength="400" [ngModelOptions]="{standalone: true}"/>
   </mat-form-field>
 
-  <button
-    [disabled]="createForm.form.invalid"
-    mat-raised-button
-    type="submit"
-    (click)="save()"
-  >
+
+  <button [disabled]="!requiredForm.valid" mat-raised-button type="submit">
     Guardar
   </button>
 </form>

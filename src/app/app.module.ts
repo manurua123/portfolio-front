@@ -17,7 +17,8 @@ import { SwiperModule } from 'swiper/angular';
 import { EducationDialogComponent } from './components/education/education-dialog/education-dialog.component';
 import { ExperienceDialogComponent } from './components/experience/experience-dialog/experience-dialog.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { SkillsDialogComponent } from './components/skills/skills-dialog/skills-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular
     NavbarComponent,
     EducationDialogComponent,
     ExperienceDialogComponent,
+    SkillsDialogComponent,
 
   ],
   imports: [

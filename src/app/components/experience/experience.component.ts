@@ -52,6 +52,7 @@ export class ExperienceComponent implements OnInit {
 
   constructor(public dialog: MatDialog,) { }
   getYear(date:Date){
+
     return moment(date).format('YYYY')
   }
   ngOnInit(): void {

@@ -1,7 +1,6 @@
 import { Experience } from './../../../models/experience';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import * as moment from 'moment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-experience-dialog',
@@ -12,20 +11,29 @@ export class ExperienceDialogComponent implements OnInit {
   @Input()
   isDetailed: boolean = false;
   @Input()
-  dataRef : Experience ={
+  dataRef: Experience = {
     position: '',
     company: '',
     companyLink: '',
-    begin: new Date(0),
-    end: new Date(0),
+    begin: new Date(),
+    end: null,
   }
-  constructor(private fb: FormBuilder) { }
+
+  requiredForm: FormGroup ;
+  constructor(private fb: FormBuilder) {
+    this.requiredForm = this.fb.group({
+      position: ['', Validators.required ],
+      company: ['', Validators.required ],
+
+
+      });
+  }
 
   ngOnInit(): void {
-    console.log(this.dataRef)
+
   }
   save() {
-    alert('SUCCESS!! :-)'+ this.dataRef.begin );
+    alert('SUCCESS!! :-)' + this.dataRef.begin);
   }
 
 }

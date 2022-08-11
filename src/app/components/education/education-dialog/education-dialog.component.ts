@@ -1,6 +1,6 @@
 import { Education } from './../../../models/education';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-education-dialog',
@@ -19,12 +19,21 @@ export class EducationDialogComponent implements OnInit {
     link: '',
     description: '',
     certification: '',
-    duration: '' ,
     begin: new Date,
-    end: new Date,
+
     progress: 0,
   }
- constructor(private fb: FormBuilder) { }
+  requiredForm: FormGroup ;
+ constructor(private fb: FormBuilder) {
+  this.requiredForm = this.fb.group({
+    career: ['', Validators.required ],
+    university: ['', Validators.required ],
+
+    description: ['', Validators.required ],
+    progress: [0, Validators.required ],
+    link: ['', Validators.required ],
+    });
+ }
 
 
   ngOnInit(): void {

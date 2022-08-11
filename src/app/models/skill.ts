@@ -1,9 +1,10 @@
 export interface Skill {
-  cod: number;
+  cod?: number;
   name: string;
   img: string;
-  gruop: number;
+  gruop?: number;
   link:string;
+  category?:string;
 }
 export interface SkillCategory {
   cod: number;

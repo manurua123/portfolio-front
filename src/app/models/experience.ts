@@ -4,6 +4,6 @@ export interface Experience {
   company: string;
   companyLink?:string;
   description?: string;
-  begin: Date;
-  end?: Date;
+  begin: Date ;
+  end?: Date | null;
 }

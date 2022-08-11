@@ -1,0 +1,28 @@
+<h2>Create a new owner</h2>
+<form [formGroup]="requiredForm" (ngSubmit)="save()"  novalidate>
+  <mat-form-field appearance="outline">
+    <mat-label>Puesto</mat-label>
+    <input  [(ngModel)]="this.dataRef.name"  matInput type="text" formControlName="name"
+      maxlength="60" required="true"/>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>img</mat-label>
+    <input  [(ngModel)]="this.dataRef.img"  formControlName="img" matInput type="text"
+      maxlength="60" required="true"/>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Web de la empresa</mat-label>
+    <input [(ngModel)]="this.dataRef.link"  formControlName="link" matInput type="text" maxlength="120" required="true"/>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Seleccione una categoria</mat-label>
+    <mat-select [(ngModel)]="this.dataRef.category"  formControlName="category" required="true">
+      <mat-option value="Diseño">Diseño</mat-option>
+      <mat-option value="WEB">WEB </mat-option>
+      <mat-option value="MGMT">MGMT</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button [disabled]="!requiredForm.valid" mat-raised-button type="submit">
+    Guardar
+  </button>
+</form>
