@@ -1,0 +1,28 @@
+<h2>Ingresar</h2>
+<form [formGroup]="requiredForm" (ngSubmit)="login()" novalidate>
+  <mat-form-field appearance="outline">
+    <mat-label>usuario</mat-label>
+    <input
+      [(ngModel)]="this.dataRef.userName"
+      matInput
+      type="text"
+      formControlName="userName"
+      maxlength="60"
+      required="true"
+    />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>constraseña</mat-label>
+    <input
+      [(ngModel)]="this.dataRef.pass"
+      matInput
+      type="password"
+      formControlName="pass"
+      maxlength="10"
+      required="true"
+    />
+  </mat-form-field>
+  <button [disabled]="!requiredForm.valid" mat-raised-button type="submit">
+    ingresar
+  </button>
+</form>

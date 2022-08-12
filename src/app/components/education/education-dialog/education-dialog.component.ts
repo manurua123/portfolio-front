@@ -24,14 +24,17 @@ export class EducationDialogComponent implements OnInit {
     progress: 0,
   }
   requiredForm: FormGroup ;
+  url = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
+
  constructor(private fb: FormBuilder) {
   this.requiredForm = this.fb.group({
-    career: ['', Validators.required ],
-    university: ['', Validators.required ],
-
-    description: ['', Validators.required ],
+    career: ['', [Validators.required,Validators.min(5) ]],
+    university: ['', [Validators.required,Validators.min(5),] ],
+    img: ['', [Validators.required,Validators.minLength(10),Validators.pattern(this.url) ]],
+    description: ['', [Validators.required,Validators.min(5)] ],
     progress: [0, Validators.required ],
-    link: ['', Validators.required ],
+    link: ['', [Validators.required,Validators.min(10),Validators.pattern(this.url)] ],
+    certification:['', [Validators.min(10),Validators.pattern(this.url)] ],
     });
  }
 
@@ -48,6 +51,10 @@ export class EducationDialogComponent implements OnInit {
     }
 
     return value;
+  }
+
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.requiredForm.controls[controlName].hasError(errorName);
   }
 
 

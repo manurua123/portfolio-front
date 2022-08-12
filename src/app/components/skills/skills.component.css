@@ -2,52 +2,28 @@
   padding: 15vh 15em;
   margin: auto;
 }
+
 .skill-conteiner {
   display: flex;
   justify-content: space-between;
 }
 
-.skill-box {
+
+.categoria-conteiner {
   width: 30%;
-  background-color: #252525;
-  text-align: center;
 }
 
-.skills-img {
+.categoria-skill {
+  width: 30%;
+  display: flex;
+}
+
+.skill {
+  margin: 1%;
+  padding: 1%;
+  background-color: red;
+}
+
+.skill img {
   width: 100%;
-}
-.skills-img img {
-  width: 60%;
-  height: auto;
-  margin: auto;
-}
-.skills-img a:hover img{
-  width: 62%;
-}
-/* Gradiente */
-
-.module-border-wrap {
-  padding: 1rem;
-  position: relative;
-  background: linear-gradient(to top, rgba(37, 37, 37, 1), rgba(255, 211, 105, 1));
-  padding: 2px;
-  border-radius: 2px;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
-
-}
-.icon{
-  font-size: xx-large;
-  color:rgba(255, 211, 105, 1) ;
-
-}
-
-.module {
-  padding: 3rem;
-  border-radius: 2px;
-  background: #252525;
-  padding: 2rem;
-}
-.module h3{
-  font-size: x-large;
-  margin-top: 0.5em;
 }

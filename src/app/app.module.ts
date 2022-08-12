@@ -19,6 +19,7 @@ import { ExperienceDialogComponent } from './components/experience/experience-di
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { SkillsDialogComponent } from './components/skills/skills-dialog/skills-dialog.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SkillsDialogComponent } from './components/skills/skills-dialog/skills-
     EducationDialogComponent,
     ExperienceDialogComponent,
     SkillsDialogComponent,
+    LoginComponent,
 
   ],
   imports: [
