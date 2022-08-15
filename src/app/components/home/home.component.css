@@ -1,6 +1,40 @@
+.home {
+  width: 100%;
+  height: 90vh;
+}
+.home-conteiner {
+  width: 80%;
+  margin: 10% auto;
 
+  display: flex;
+}
+.home-title {
+  width: 100%;
+  text-align: center;
+  padding-top: 1%;
+}
+.home-img {
+  width: 30%;
+}
 
-.home{
-width: 100%;
-height: 90vh;
+.home-img img {
+  border-radius: 50%;
+
+  width: 100%;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.home-detail {
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 50%;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: xx-large;
+}
+h2 {
+  font-weight: 500;
 }

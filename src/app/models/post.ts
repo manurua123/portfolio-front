@@ -1,8 +1,6 @@
 export interface Post {
-  cod: number;
-  career: string;
-  university: string;
-  description: string;
-  begin: Date;
-  end?: Date;
+  id?: number;
+  title: string;
+  link?: string;
+  img: string;
 }

@@ -1,4 +1,5 @@
 export interface User {
-  userName: string;
-  pass: string;
+  username: string;
+  password: string;
+  rol?:string;
 }

@@ -1,3 +1,5 @@
+
+import { AuthSerivice } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user';
@@ -13,25 +15,32 @@ import { User } from 'src/app/models/user';
 export class LoginComponent implements OnInit {
 
   dataRef: User = {
-    userName:'',
-    pass:'',
+    username:'',
+    password:'',
   }
 
-  category = ['Diseño', 'WEB', 'MGMT']
+
 
   requiredForm: FormGroup ;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private auth: AuthSerivice) {
     this.requiredForm = this.fb.group({
-      userName: ['', Validators.required ],
-      pass: ['', Validators.required ],
-
+      username: ['', Validators.required ],
+      password: ['', Validators.required ],
       });
   }
 
   ngOnInit(): void {
   }
   login() {
-    alert('SUCCESS!! :-)' );
+    // alert('Data: ' + this.requiredForm.value.username)
+    this.auth.login(this.requiredForm.value).subscribe(data=>{
+     console.log(data)
+    })
+  }
+
+
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.requiredForm.controls[controlName].hasError(errorName);
   }
 }
 

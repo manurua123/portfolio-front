@@ -6,6 +6,9 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user';
+import { AuthSerivice } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-skills',
@@ -134,8 +137,10 @@ export class SkillsComponent implements OnInit {
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
   ];
-
-  constructor(public dialog: MatDialog) {}
+  userAuth$ : Observable<User>
+  constructor(public dialog: MatDialog,private auth: AuthSerivice) {
+    this.userAuth$ = auth.getUser()
+  }
 
   ngOnInit(): void {}
 

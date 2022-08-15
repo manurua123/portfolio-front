@@ -1,23 +1,32 @@
 <div class="conteiner">
-  <h2>Experience works!</h2>
-  <button mat-icon-button (click)="openDialog()"><mat-icon>add</mat-icon></button>
-  <div *ngFor="let experence of experiences; index as i">
+  <h2>Experiencia Laboral</h2>
+
+  <div *ngFor="let experence of dataSource; index as i">
     <div class="experence">
       <div class="dates">
         <p>
           {{ getYear(experence.begin) }}
-          <span *ngIf="experence.end"> - {{ getYear(experence.end) }}</span>  <span *ngIf="!experence.end"> - act.</span>
+          <span *ngIf="experence.end"> - {{ getYear(experence.end) }}</span> <span *ngIf="!experence.end"> - act.</span>
         </p>
       </div>
       <div class="position">
-        <h3>{{ experence.position }} <button  mat-icon-button (click)="openDialog(experence)"><mat-icon>edit</mat-icon></button></h3>
+        <h3>{{ experence.position }}
+          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent"(click)="openDialog(experence)">
+            <mat-icon class="mat-18">edit</mat-icon>
+          </button>
+          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent" (click)="delete(experence)">
+          <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </h3>
         <h4>
           <a *ngIf="experence.companyLink" href="{{ experence.companyLink }}" target="”_blank”">
             {{ experence.company }}</a>
-            <span *ngIf="!experence.companyLink">  {{ experence.company }} </span>
+          <span *ngIf="!experence.companyLink"> {{ experence.company }} </span>
         </h4>
       </div>
     </div>
   </div>
-
+  <button mat-flat-button color="accent" class="add" *ngIf="(userAuth$ | async)?.rol !== 'admin' " (click)="openDialog()">
+   Agregar <i class="bi bi-plus-lg"></i>
+  </button>
 </div>

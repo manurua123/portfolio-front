@@ -1,8 +1,12 @@
+import { ExperienceService } from './../../services/experience.service';
 import { Experience } from './../../models/experience';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ExperienceDialogComponent } from './experience-dialog/experience-dialog.component';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user';
+import { AuthSerivice } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-experience',
@@ -10,70 +14,46 @@ import { ExperienceDialogComponent } from './experience-dialog/experience-dialog
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-  experiences: Array<Experience> = [
-    { cod: 1,
-      position: "IT Analystic",
-      company: "Berlin Houses",
-      companyLink:"http://berlin.com.ar/",
-      begin: moment("2021/09/20", 'YYYY-MM-DD').toDate(),
+  userAuth$: Observable<User>
+  dataSource: any;
 
-    },
-    { cod: 2,
-      position: "Tecnico de reparación",
-      company: "Programa EKOA - U.N.L.P.",
-      companyLink: "https://www.ekoa.unlp.edu.ar/",
-      begin: moment("2018/02/01", 'YYYY-MM-DD').toDate(),
-      end: moment("2021/09/19", 'YYYY-MM-DD').toDate(),
-    },
-    { cod: 3,
-      position: "Tutor Universitario ",
-      company: "Facultad de Informatica - U.N.L.P.",
-      companyLink: "https://www.info.unlp.edu.ar/tutorias/",
-      begin: moment("2020/02/01", 'YYYY-MM-DD').toDate(),
-      end: moment("2022/04/01", 'YYYY-MM-DD').toDate(),
-    },
+  constructor(public dialog: MatDialog, private experienceService: ExperienceService, private auth: AuthSerivice) {
+    this.userAuth$ = auth.getUser()
+  }
 
-    { cod: 4,
-      position: "Ayudante de Cátedra ",
-      company: "Expresión de Problemas y Algoritmos, Facultad de Informatica - U.N.L.P.",
-      companyLink: "https://www.info.unlp.edu.ar/tutorias/",
-      begin: moment("2021/03/01", 'YYYY-MM-DD').toDate(),
-      end: moment("2021/02/01", 'YYYY-MM-DD').toDate(),
-    },
-    { cod: 5,
-      position: "Desarrollador Web",
-      company: "Freelance",
-      begin: moment("2018/02/01", 'YYYY-MM-DD').toDate(),
-      end: moment("2021/09/18", 'YYYY-MM-DD').toDate(),
-    },
+  ngOnInit(): void {
+    this.updateTable()
 
+  }
+  updateTable() {
+    this.experienceService.getAll().subscribe(data => { this.dataSource = data })
+  }
 
-  ];
-
-  constructor(public dialog: MatDialog,) { }
-  getYear(date:Date){
-
+  getYear(date: Date) {
     return moment(date).format('YYYY')
   }
-  ngOnInit(): void {
-  }
-
-
-
   openDialog(data?: Experience) {
-    let dialogRef = this.dialog.open(ExperienceDialogComponent );
+    let dialogRef = this.dialog.open(ExperienceDialogComponent);
+
     let instance = dialogRef.componentInstance;
-    if(data){
+    if (data) {
       instance.isDetailed = true;
       instance.dataRef = data
     }
-    else{
+    else {
       instance.isDetailed = false;
     }
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(data => {
+      this.updateTable()
+
     });
   }
 
+  delete(data: Experience) {
+
+    this.experienceService.delete(data).subscribe(data =>
+      this.updateTable())
+
+  }
 
 }

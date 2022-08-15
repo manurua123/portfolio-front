@@ -1,4 +1,4 @@
-<h2>Create a new owner</h2>
+<h2>Experiencia Laboral</h2>
 <form [formGroup]="requiredForm" (ngSubmit)="save()" novalidate>
   <mat-form-field appearance="outline">
     <mat-label>Puesto</mat-label>
@@ -28,7 +28,11 @@
     <mat-datepicker #end></mat-datepicker>
   </mat-form-field>
 
-  <button [disabled]="!requiredForm.valid" mat-raised-button type="submit">
+  <div class="botones">
+  <button [disabled]="!requiredForm.valid" mat-button color="accent" type="submit">
     Guardar
   </button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>
+
 </form>

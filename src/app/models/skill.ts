@@ -1,5 +1,5 @@
 export interface Skill {
-  cod?: number;
+  id?: number;
   name: string;
   img: string;
 

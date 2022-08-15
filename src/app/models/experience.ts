@@ -1,5 +1,5 @@
 export interface Experience {
-  cod?: number;
+  id?: number;
   position: string;
   company: string;
   companyLink?:string;

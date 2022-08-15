@@ -18,3 +18,8 @@ mat-form-field {
 .formConteiner{
   width: 100%;
 }
+
+.botones{
+  display: flex;
+  justify-content: space-between;
+}

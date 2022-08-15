@@ -4,6 +4,9 @@ import {
   MatDialog,
 
 } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/models/user';
+import { AuthSerivice } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +14,11 @@ import {
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
+  userAuth$ : Observable<User>
+
+  constructor(public dialog: MatDialog,private auth: AuthSerivice) {
+    this.userAuth$ = auth.getUser()
+  }
 
   ngOnInit(): void {}
 
@@ -20,5 +27,8 @@ export class NavbarComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  logAut(){
+    this.auth.logOut()
   }
 }

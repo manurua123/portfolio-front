@@ -1,5 +1,5 @@
 export interface Education {
-cod?: number;
+  id?: number;
   career: string;
   university: string;
   img?:string;
