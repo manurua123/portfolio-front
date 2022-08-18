@@ -4,21 +4,21 @@
 }
 
 .experence {
-  padding-bottom: 6em;
+  padding-bottom: 8em;
 }
 
 .experence .dates {
   padding-top: 1em;
-  width: 15%;
+  width: 10%;
   float: left;
 }
 .experence .position {
-  width: 85%;
+  width: 90%;
   float: left;
 }
 .experence .position h3 {
   margin: 0px;
-  margin-bottom: 0.1em;
+  margin-bottom: 0px;
   font-size: x-large;
 }
 .experence .position a {
@@ -35,4 +35,8 @@
   width: 25%;
   background-color: #eeeeee;
 
+}
+.section-title{
+  font-size: x-large;
+  font-weight: 700;
 }

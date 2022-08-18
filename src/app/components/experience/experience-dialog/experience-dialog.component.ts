@@ -10,8 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./experience-dialog.component.css']
 })
 export class ExperienceDialogComponent implements OnInit {
-  @Input()
-  isDetailed: boolean = false;
+
   @Input()
   dataRef: Experience = {
     position: '',

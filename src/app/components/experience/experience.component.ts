@@ -37,20 +37,14 @@ export class ExperienceComponent implements OnInit {
 
     let instance = dialogRef.componentInstance;
     if (data) {
-      instance.isDetailed = true;
       instance.dataRef = data
-    }
-    else {
-      instance.isDetailed = false;
     }
     dialogRef.afterClosed().subscribe(data => {
       this.updateTable()
-
     });
   }
 
   delete(data: Experience) {
-
     this.experienceService.delete(data).subscribe(data =>
       this.updateTable())
 

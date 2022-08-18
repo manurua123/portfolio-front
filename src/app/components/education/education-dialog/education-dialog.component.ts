@@ -2,6 +2,7 @@ import { EducationService } from './../../../services/education.service';
 import { Education } from './../../../models/education';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-education-dialog',
@@ -10,8 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EducationDialogComponent implements OnInit {
 
-  @Input()
-  isDetailed: boolean = false;
+
   @Input()
   dataRef : Education = {
     career: '',
@@ -26,7 +26,7 @@ export class EducationDialogComponent implements OnInit {
   requiredForm: FormGroup ;
   url = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
 
- constructor(private fb: FormBuilder, private educationService: EducationService) {
+ constructor(private fb: FormBuilder, private educationService: EducationService, public dialogRef: MatDialogRef<EducationDialogComponent>) {
   this.requiredForm = this.fb.group({
     career: ['', [Validators.required,Validators.min(5) ]],
     university: ['', [Validators.required,Validators.min(5),] ],
@@ -42,13 +42,10 @@ export class EducationDialogComponent implements OnInit {
   ngOnInit(): void {
   }
   save() {
-    console.log("Salio: " + this.dataRef.career)
     this.educationService.save(this.dataRef).subscribe()
+    this.dialogRef.close();
   }
 
-  delete(){
-    alert('ID A ELIMIANAR: ' + this.dataRef.id);
-  }
 
 
 

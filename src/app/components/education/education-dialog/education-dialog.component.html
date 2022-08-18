@@ -38,11 +38,11 @@
       <mat-error *ngIf="hasError('description', 'required')">Campo Requerido</mat-error>
       <mat-error *ngIf="hasError('description', 'minlength')">No es un link valido </mat-error>
   </mat-form-field>
-
-  <mat-label>Progreso</mat-label>
+<div style="width: 45%; margin-left: 5%;float: right;">
+  <mat-label >Progreso</mat-label>
   <mat-slider style="width: 100%" [displayWith]="formatLabel" [(ngModel)]="this.dataRef.progress"
   formControlName="progress" thumbLabel min="1" max="100"> </mat-slider>
-
+</div>
   <mat-form-field style="width: 45%; margin-right: 5%">
     <mat-label>Fecha de ingreo</mat-label>
     <input required="true" [ngModelOptions]="{ standalone: true }" matInput [matDatepicker]="begin"
@@ -50,8 +50,6 @@
     <mat-datepicker-toggle matSuffix [for]="begin"></mat-datepicker-toggle>
     <mat-datepicker #begin></mat-datepicker>
   </mat-form-field>
-
-
   <mat-form-field appearance="outline" *ngIf="dataRef.progress==100">
     <mat-label>Certificado</mat-label>
     <input style="resize: none" [(ngModel)]="this.dataRef.certification"
@@ -59,8 +57,10 @@
       <mat-error *ngIf="hasError('certification', 'pattern')">No es un link valido </mat-error>
   </mat-form-field>
 
-
-  <button [disabled]="!requiredForm.valid" mat-raised-button type="submit">
-    Guardar
-  </button>
+  <div class="botones">
+    <button [disabled]="!requiredForm.valid" mat-button color="accent" type="submit">
+      Guardar
+    </button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </div>
 </form>

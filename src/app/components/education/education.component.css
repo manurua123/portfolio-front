@@ -1,9 +1,12 @@
-.conteiner {
+/* .conteiner {
   padding: 15vh 15em;
   margin: auto;
 }
 
-
+.section-title{
+  font-size: x-large;
+  font-weight: 700;
+}
 mat-card {
   height: 25em;
   background-color: transparent;
@@ -40,11 +43,22 @@ mat-card a {
   color: #e7e7e7;
 }
 
-mat-card button{
+mat-card .buttonCert{
   position: absolute;
   bottom: 2.5em;
   left: 40%;
 }
+
+mat-card .buttonAdmin{
+  position: absolute;
+  bottom: 0;
+  right: 0%;
+  background-color: #222;
+  z-index: 10;
+}
+
+
+
 mat-progress-bar {
   width: 90%;
   margin: 0px 5%;
@@ -55,4 +69,53 @@ mat-progress-bar {
 
 mat-card a:hover {
   color: #ffd369;
+}
+.add{
+ margin-top: 2em;
+
+  width: 15%;
+  background-color: #eeeeee;
+} */
+
+.conteiner {
+  padding: 10vh 40vh;
+  margin: auto;
+}
+
+.education {
+  padding-bottom: 6em;
+}
+
+.education .dates {
+  padding-top: 1em;
+  width: 15%;
+  float: left;
+}
+.education .career {
+  width: 85%;
+  float: left;
+}
+.education .career h3 {
+  margin: 0px;
+  margin-bottom: 0.1em;
+  font-size: x-large;
+}
+.education .career a {
+  text-decoration: none;
+  color: #eeeeee;
+}
+.education .career a:hover {
+  text-decoration: none;
+  color: #ffd369;
+  background-color: transparent;
+}
+
+.add{
+  width: 25%;
+  background-color: #eeeeee;
+
+}
+.section-title{
+  font-size: x-large;
+  font-weight: 700;
 }

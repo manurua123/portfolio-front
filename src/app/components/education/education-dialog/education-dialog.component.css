@@ -35,3 +35,9 @@ textarea{
 .mat-slider-thumb-label-text {
   opacity: 1 !important;
 }
+.botones{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+

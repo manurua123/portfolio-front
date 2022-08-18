@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Education } from '../models/education';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,18 +11,28 @@ import { Observable } from 'rxjs';
 export class EducationService {
   private resourceURL = ' http://localhost:8080/education/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar) { }
 
   getAll(): Observable<Education[]> {
     return this.httpClient.get<Education[]>(this.resourceURL + "all");
   }
 
   save(educacion: Education): Observable<any> {
+    this.openSnackBar("Guardado Exitoso!")
     return this.httpClient.post<any>(this.resourceURL + 'create', educacion);
+
   }
 
   delete(education: Education): Observable<Education> {
-    return this.httpClient.delete<Education>(this.resourceURL + '/delete/' + education.id);
+    this.openSnackBar("Elemetno Eliminado!")
+    return this.httpClient.delete<Education>(this.resourceURL + 'delete/' + education.id);
 
   }
+
+  openSnackBar(text:string) {
+    this._snackBar.open(text, 'X', {
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+}
 }
