@@ -1,22 +1,14 @@
 <div class="conteiner">
-  <h2>Skills!</h2>
+  <h2 class="section-title">Tegnologias y Habilidades</h2>
   <div class="skill-conteiner">
-    <div
-      class="categoria-conteiner"
-      *ngFor="let category of categorys; index as i"
-    >
-      <H2 class="{{ category.icon }}"></H2>
-      <H2>{{ category.name }}</H2>
-      <div class="categoria-skill">
-        <div
-          class="skill"
-          *ngFor="let skill of filterArray(category.name); index as j"
-        >
-          <a href="{{ skill.link }}" target="_blank">
-            <img src="{{ skill.img }}" />
-          </a>
-          <button *ngIf="(userAuth$ | async)?.rol == 'admin' " mat-icon-button (click)="openDialog()">
-            <mat-icon>remove</mat-icon>
+    <div class="skill-tittle" *ngFor="let cat of categorias">
+      <mat-icon class="skill-tittle-icon">{{ cat.icon }} </mat-icon>
+      <h3>{{ cat.name }}</h3>
+      <div class="skill-list" >
+        <div class="skill-item" *ngFor="let skill of filterArray(cat.name)">
+          <a href="{{ skill.link }}"><img src="{{ skill.img }}" /></a>
+          <button mat-mini-fab color="accent">
+            <mat-icon class="mat-18">delete</mat-icon>
           </button>
         </div>
       </div>

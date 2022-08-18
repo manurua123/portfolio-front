@@ -1,11 +1,12 @@
 .home {
+  padding: 0px 5%;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+
 }
 .home-conteiner {
-  width: 80%;
+  width: 100%;
   margin: 10% auto;
-
   display: flex;
 }
 .home-title {
@@ -41,6 +42,7 @@ h2 {
 
 
 .argentinaPrograma{
+  z-index: 999;
   border-radius: 10px;
   position: fixed;
   width: 7%;
@@ -53,6 +55,17 @@ h2 {
 .argentinaPrograma img{
   width: 100%;
 }
+.buttonDown{
+  left: 50%;
+  top: 75vh;
+  margin: auto;
+  text-align: center;
+  position: absolute;
+}
+
+.buttonDown mat-icon{
+  color: #ffd369;
+  transform: scale(3);
 
 
-
+}

@@ -1,5 +1,5 @@
 .conteiner {
-  padding: 10vh 40vh;
+  padding: 5vh 0;
   margin: auto;
 }
 
@@ -8,12 +8,14 @@
 }
 
 .experence .dates {
+  text-align: center;
   padding-top: 1em;
   width: 10%;
   float: left;
 }
 .experence .position {
   width: 90%;
+  padding-left: 5%;
   float: left;
 }
 .experence .position h3 {
@@ -37,6 +39,7 @@
 
 }
 .section-title{
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: 700;
+  margin-bottom: 2em;
 }

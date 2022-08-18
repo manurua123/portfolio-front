@@ -11,10 +11,10 @@
       </div>
       <div class="position">
         <h3>{{ experence.position }}
-          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent"(click)="openDialog(experence)">
+          <button matTooltip="Editar componente" *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent"(click)="openDialog(experence)">
             <mat-icon class="mat-18">edit</mat-icon>
           </button>
-          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent" (click)="delete(experence)">
+          <button matTooltip="Eliminar componente" *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent" (click)="delete(experence)">
           <mat-icon class="mat-18">delete</mat-icon>
           </button>
         </h3>
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <button mat-flat-button color="accent" class="add" *ngIf="(userAuth$ | async)?.rol !== 'admin' " (click)="openDialog()">
+  <button matTooltip="Agregar componente" mat-flat-button color="accent" class="add" *ngIf="(userAuth$ | async)?.rol !== 'admin' " (click)="openDialog()">
    Agregar <i class="bi bi-plus-lg"></i>
   </button>
 </div>

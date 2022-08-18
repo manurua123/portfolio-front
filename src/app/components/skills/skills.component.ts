@@ -16,10 +16,10 @@ import { AuthSerivice } from 'src/app/services/auth.service';
   styleUrls: ['./skills.component.css'],
 })
 export class SkillsComponent implements OnInit {
-  categorys: Category[] = [
-    { name: 'Diseño', icon: "bi bi-palette2" },
-    { name: 'WEB', icon: "bi bi-code-slash" },
-    { name: 'MGMT', icon: "bi bi-card-checklist" },
+  categorias: Category[] = [
+    { name: 'Diseño', icon: "design_services" },
+    { name: 'Development', icon: "code" },
+    { name: 'Management', icon: "account_tree" },
   ];
   skill: Skill[] = [
     {
@@ -67,73 +67,73 @@ export class SkillsComponent implements OnInit {
     {
       name: 'Angular',
       img: 'assets/img/skills-min/angular-min.png',
-      category: 'WEB',
+      category: 'Development',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi28oSFlr34AhV8uZUCHTRPD4wQFnoECAkQAQ&url=https%3A%2F%2Fangular.io%2F&usg=AOvVaw2etFta1TXj3OCM8r72lVr8',
     },
     {
       name: 'Angular',
       img: 'assets/img/skills-min/angular-min.png',
-      category: 'WEB',
+      category: 'Development',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi28oSFlr34AhV8uZUCHTRPD4wQFnoECAkQAQ&url=https%3A%2F%2Fangular.io%2F&usg=AOvVaw2etFta1TXj3OCM8r72lVr8',
     },
     {
       name: 'Angular',
       img: 'assets/img/skills-min/angular-min.png',
-      category: 'WEB',
+      category: 'Development',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi28oSFlr34AhV8uZUCHTRPD4wQFnoECAkQAQ&url=https%3A%2F%2Fangular.io%2F&usg=AOvVaw2etFta1TXj3OCM8r72lVr8',
     },
     {
       name: 'Angular',
       img: 'assets/img/skills-min/angular-min.png',
-      category: 'WEB',
+      category: 'Development',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi28oSFlr34AhV8uZUCHTRPD4wQFnoECAkQAQ&url=https%3A%2F%2Fangular.io%2F&usg=AOvVaw2etFta1TXj3OCM8r72lVr8',
     },
     {
       name: 'Angular',
       img: 'assets/img/skills-min/angular-min.png',
-      category: 'WEB',
+      category: 'Development',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi28oSFlr34AhV8uZUCHTRPD4wQFnoECAkQAQ&url=https%3A%2F%2Fangular.io%2F&usg=AOvVaw2etFta1TXj3OCM8r72lVr8',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
     {
       name: 'Monday',
       img: 'assets/img/skills-min/monday-min.png',
-      category: 'MGMT',
+      category: 'Management',
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
   ];

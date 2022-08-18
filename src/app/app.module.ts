@@ -12,7 +12,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SwiperModule } from 'swiper/angular';
 import { EducationDialogComponent } from './components/education/education-dialog/education-dialog.component';
@@ -21,6 +20,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { SkillsDialogComponent } from './components/skills/skills-dialog/skills-dialog.component';
 import { LoginComponent } from './components/login/login.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 
 

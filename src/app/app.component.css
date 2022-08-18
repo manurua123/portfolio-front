@@ -1,8 +1,22 @@
-
-
-
 .conteiner{
   padding: 40vh;
   margin: auto;
+}
+.eduExp{
+  display: flex;
+  justify-content: center;
+
+}
+
+.experiencia{
+  width: 50%;
+  padding-left: 5%;
+  /* background-color: brown; */
+  border-right: 1px solid #ffd369;
+}
+.educacion{
+  width: 50%;
+  padding-left: 5%;
+  /* background-color: rebeccapurple; */
 }
 

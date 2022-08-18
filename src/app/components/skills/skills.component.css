@@ -1,29 +1,55 @@
 .conteiner {
-  padding: 15vh 15em;
-  margin: auto;
+  padding: 5vh 5%;
+  margin: 5% auto;
+}
+.section-title{
+  font-size: xx-large;
+  font-weight: 700;
+  margin-bottom: 2em;
 }
 
-.skill-conteiner {
+.skill-conteiner{
+  width: 95%;
+  margin: auto;
+  height: 10px;
   display: flex;
   justify-content: space-between;
 }
-
-
-.categoria-conteiner {
+.skill-tittle{
   width: 30%;
+  text-align: center;
+
+
+}
+.skill-tittle h3{
+  font-size: x-large;
+  margin-bottom: 1em;
+}
+.skill-tittle .skill-tittle-icon{
+  transform: scale(2);
+  margin-bottom: 1em;
 }
 
-.categoria-skill {
-  width: 30%;
-  display: flex;
+.skill-list{
+
+
+}
+.skill-item{
+display: inline-block;
+
+
+  margin: 2.5%;
+  width: 20%;
+  position: relative;
+
+
 }
 
-.skill {
-  margin: 1%;
-  padding: 1%;
-  background-color: red;
-}
-
-.skill img {
+.skill-item img{
   width: 100%;
+}
+.skill-item button{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
