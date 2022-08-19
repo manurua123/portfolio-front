@@ -5,6 +5,7 @@ export interface Skill {
 
   link:string;
   category:string;
+  progress?: number;
 }
 export interface Category{
   name:string;

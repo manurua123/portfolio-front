@@ -1,3 +1,4 @@
+import { SkillService } from './../../services/skill.service';
 import { Category, Skill } from './../../models/skill';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -9,6 +10,8 @@ import { SkillsDialogComponent } from './skills-dialog/skills-dialog.component';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { AuthSerivice } from 'src/app/services/auth.service';
+
+
 
 @Component({
   selector: 'app-skills',
@@ -137,28 +140,43 @@ export class SkillsComponent implements OnInit {
       link: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwje98O8lr34AhXZr5UCHawcBxMQFnoECAUQAQ&url=https%3A%2F%2Fmonday.com%2Flang%2Fes&usg=AOvVaw0oKWJGTEO49LYN5dXPtCx4',
     },
   ];
+
+  ramdon(){
+    return Math.floor(Math.random() * 100);
+
+  }
   userAuth$ : Observable<User>
-  constructor(public dialog: MatDialog,private auth: AuthSerivice) {
+  dataSource: any;
+
+  constructor(public dialog: MatDialog,private auth: AuthSerivice, private skillService:SkillService) {
     this.userAuth$ = auth.getUser()
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.updateTable()
+  }
 
   filterArray(cat: string) {
     return this.skill.filter((skill) => skill.category === cat);
+  }
+
+  updateTable() {
+    this.skillService.getAll().subscribe(data => { this.dataSource = data })
   }
 
   openDialog(data?: Skill) {
     let dialogRef = this.dialog.open(SkillsDialogComponent);
     let instance = dialogRef.componentInstance;
     if (data) {
-      instance.isDetailed = true;
-      instance.dataRef = data;
-    } else {
-      instance.isDetailed = false;
+      instance.dataRef = data
     }
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+    dialogRef.afterClosed().subscribe(result => {
+      this.updateTable()
     });
+  }
+  delete(data: Skill) {
+    this.skillService.delete(data).subscribe(data =>
+      this.updateTable())
+
   }
 }

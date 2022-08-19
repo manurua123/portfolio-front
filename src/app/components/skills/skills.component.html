@@ -4,14 +4,42 @@
     <div class="skill-tittle" *ngFor="let cat of categorias">
       <mat-icon class="skill-tittle-icon">{{ cat.icon }} </mat-icon>
       <h3>{{ cat.name }}</h3>
-      <div class="skill-list" >
+      <div class="skill-list">
         <div class="skill-item" *ngFor="let skill of filterArray(cat.name)">
-          <a href="{{ skill.link }}"><img src="{{ skill.img }}" /></a>
-          <button mat-mini-fab color="accent">
-            <mat-icon class="mat-18">delete</mat-icon>
-          </button>
+          <a href="{{ skill.link }}"
+            ><img src="{{ skill.img }}" />
+            <button
+              mat-icon-button
+              color="accent"
+              class="delete"
+              *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+            >
+              <mat-icon class="mat-18">delete</mat-icon>
+            </button>
+
+            <div class="progress">
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                [style.width]="ramdon() + '%'"
+              ></div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </div>
+  <button
+    matTooltip="Agregar componente"
+    mat-mini-fab
+    color="accent"
+    class="add"
+    *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+    (click)="openDialog()"
+  >
+    <mat-icon> add</mat-icon>
+  </button>
 </div>

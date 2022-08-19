@@ -1,85 +1,9 @@
-/* .conteiner {
-  padding: 15vh 15em;
-  margin: auto;
-}
 
-.section-title{
-  font-size: x-large;
-  font-weight: 700;
-}
-mat-card {
-  height: 25em;
-  background-color: transparent;
-  color: #eeeeee;
-  padding: 2em 4em;
-  border-radius: 2px;
-}
-
-mat-card-title {
-  padding-bottom: 1em;
-}
-
-mat-card-subtitle {
-  height: 4em;
-}
-
-.cardImg {
-  width: 10%;
-}
-
-.cardImg img {
-  width: auto;
-  height: 100%;
-}
-
-
-.module {
-  background: #222;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
-mat-card a {
-  text-decoration: none;
-  color: #e7e7e7;
-}
-
-mat-card .buttonCert{
-  position: absolute;
-  bottom: 2.5em;
-  left: 40%;
-}
-
-mat-card .buttonAdmin{
-  position: absolute;
-  bottom: 0;
-  right: 0%;
-  background-color: #222;
-  z-index: 10;
-}
-
-
-
-mat-progress-bar {
-  width: 90%;
-  margin: 0px 5%;
-  position: absolute;
-  left: 0px;
-  bottom: 1em;
-}
-
-mat-card a:hover {
-  color: #ffd369;
-}
-.add{
- margin-top: 2em;
-
-  width: 15%;
-  background-color: #eeeeee;
-} */
 
 .conteiner {
   padding: 5vh 0;
   margin: auto;
+  position: relative;
 }
 
 .education {
@@ -111,13 +35,13 @@ mat-card a:hover {
   background-color: transparent;
 }
 
-.add{
-  width: 25%;
-  background-color: #eeeeee;
 
-}
 .section-title{
   font-size: xx-large;
   font-weight: 700;
   margin-bottom: 2em;
+}
+.add{
+  position:absolute;
+  right: 10%;
 }

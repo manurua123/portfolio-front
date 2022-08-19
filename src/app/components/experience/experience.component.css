@@ -1,6 +1,7 @@
 .conteiner {
   padding: 5vh 0;
   margin: auto;
+  position: relative;
 }
 
 .experence {
@@ -33,13 +34,13 @@
   background-color: transparent;
 }
 
-.add{
-  width: 25%;
-  background-color: #eeeeee;
 
-}
 .section-title{
   font-size: xx-large;
   font-weight: 700;
   margin-bottom: 2em;
+}
+.add{
+  position:absolute;
+  right: 10%;
 }

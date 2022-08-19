@@ -1,39 +1,74 @@
-
 <div class="conteiner">
-  <h2 class="section-title">Carreras y Cursos</h2>
+  <h2 class="section-title">
+    Carreras y Cursos
+
+  </h2>
   <div *ngFor="let course of dataSource; index as i">
     <div class="education">
       <div class="dates">
         <p>
-          {{ getYear(course.begin) }} <span *ngIf="course.progress<100">- act.</span>
+          {{ getYear(course.begin) }}
+          <span *ngIf="course.progress < 100">- act.</span>
         </p>
       </div>
       <div class="career">
-        <h3>{{ course.career }}
-          <a href="{{course.certification}}" target="_blank" *ngIf="course.certification" >
-            <button mat-icon-button color="accent" matTooltip="Certificado de Finalizacion">
+        <h3>
+          {{ course.career }}
+          <a
+            href="{{ course.certification }}"
+            target="_blank"
+            *ngIf="course.certification"
+          >
+            <button
+              mat-icon-button
+              color="accent"
+              matTooltip="Certificado de Finalizacion"
+            >
               <mat-icon class="mat-18">badge</mat-icon>
             </button>
           </a>
-          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent"
-            (click)="openDialog(course)">
-            <mat-icon class="mat-18" matTooltip="Editar componente" >edit</mat-icon>
+          <button
+            *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+            mat-icon-button
+            color="accent"
+            (click)="openDialog(course)"
+          >
+            <mat-icon class="mat-18" matTooltip="Editar componente"
+              >edit</mat-icon
+            >
           </button>
-          <button *ngIf="(userAuth$ | async)?.rol !== 'admin' " mat-icon-button color="accent" (click)="delete(course)">
-            <mat-icon class="mat-18" matTooltip="Eliminar componente" >delete</mat-icon>
+          <button
+            *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+            mat-icon-button
+            color="accent"
+            (click)="delete(course)"
+          >
+            <mat-icon class="mat-18" matTooltip="Eliminar componente"
+              >delete</mat-icon
+            >
           </button>
         </h3>
         <h4>
-          <a *ngIf="course.university" href="{{ course.university }}" target="_blank">
-            {{ course.university }}</a>
+          <a
+            *ngIf="course.university"
+            href="{{ course.university }}"
+            target="_blank"
+          >
+            {{ course.university }}</a
+          >
           <span *ngIf="!course.university"> {{ course.university }} </span>
         </h4>
       </div>
     </div>
-
   </div>
-  <button mat-flat-button color="accent" class="add" *ngIf="(userAuth$ | async)?.rol !== 'admin' "
-  (click)="openDialog()" matTooltip="Agregar componente" >
-  Agregar <i class="bi bi-plus-lg"></i>
-</button>
-  </div>
+  <button
+      matTooltip="Agregar componente"
+      mat-mini-fab
+      color="accent"
+      class="add"
+      *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+      (click)="openDialog()"
+    >
+      <mat-icon> add</mat-icon>
+    </button>
+</div>

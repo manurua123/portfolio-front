@@ -1,55 +1,75 @@
 .conteiner {
   padding: 5vh 5%;
   margin: 5% auto;
+position: relative;
+height: auto;
 }
-.section-title{
+
+.section-title {
   font-size: xx-large;
   font-weight: 700;
   margin-bottom: 2em;
 }
 
-.skill-conteiner{
+.skill-conteiner {
   width: 95%;
   margin: auto;
   height: 10px;
   display: flex;
   justify-content: space-between;
 }
-.skill-tittle{
+
+.skill-tittle {
   width: 30%;
   text-align: center;
-
-
 }
-.skill-tittle h3{
+
+.skill-tittle h3 {
   font-size: x-large;
   margin-bottom: 1em;
 }
-.skill-tittle .skill-tittle-icon{
+
+.skill-tittle .skill-tittle-icon {
   transform: scale(2);
   margin-bottom: 1em;
 }
 
-.skill-list{
+.skill-list {}
 
+.skill-item {
 
-}
-.skill-item{
-display: inline-block;
-
-
+  display: inline-block;
   margin: 2.5%;
-  width: 20%;
+  width: 45%;
   position: relative;
-
-
 }
 
-.skill-item img{
+.skill-item img {
+  width: 30%;
+  margin-bottom: 5%;
+}
+.skill-item mat-progress-bar{
+  margin-top: 15%;
   width: 100%;
 }
-.skill-item button{
+
+.skill-item .delete {
   position: absolute;
-  right: 0px;
+  right: 0%;
+  top: 0%
+}
+.progress-bar{
+
+  background-color: #ffd369;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.add{
+  position:absolute;
+  right: 10%;
   bottom: 0px;
 }
+
