@@ -12,7 +12,11 @@
         </p>
       </div>
       <div class="career">
+
+
         <h3>
+         <a  href="{{ course.link }}"
+         target="_blank">   <img src="{{course.img}}">  </a>
           {{ course.career }}
           <a
             href="{{ course.certification }}"
@@ -28,7 +32,7 @@
             </button>
           </a>
           <button
-            *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+            *ngIf="(userAuth$ | async)?.rol == 'admin'"
             mat-icon-button
             color="accent"
             (click)="openDialog(course)"
@@ -38,7 +42,7 @@
             >
           </button>
           <button
-            *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+            *ngIf="(userAuth$ | async)?.rol == 'admin'"
             mat-icon-button
             color="accent"
             (click)="delete(course)"
@@ -50,8 +54,8 @@
         </h3>
         <h4>
           <a
-            *ngIf="course.university"
-            href="{{ course.university }}"
+            *ngIf="course.link"
+            href="{{ course.link }}"
             target="_blank"
           >
             {{ course.university }}</a
@@ -66,7 +70,7 @@
       mat-mini-fab
       color="accent"
       class="add"
-      *ngIf="(userAuth$ | async)?.rol !== 'admin'"
+      *ngIf="(userAuth$ | async)?.rol == 'admin'"
       (click)="openDialog()"
     >
       <mat-icon> add</mat-icon>

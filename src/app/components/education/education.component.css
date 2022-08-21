@@ -13,17 +13,25 @@
 .education .dates {
   text-align: center;
   padding-top: 1em;
-  width: 15%;
+  width: 20%;
   float: left;
 }
 .education .career {
-  width: 85%;
+  width: 80%;
   float: left;
 }
+.education .career img{
+  margin-top: 0.5em;
+  margin-right: 1em;
+  width: 2em;
+  float: left;
+}
+
 .education .career h3 {
   margin: 0px;
   margin-bottom: 0.1em;
   font-size: x-large;
+  font-weight: 600;
 }
 .education .career a {
   text-decoration: none;

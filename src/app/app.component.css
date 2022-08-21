@@ -1,22 +1,37 @@
-.conteiner{
+.conteiner {
   padding: 40vh;
   margin: auto;
 }
-.eduExp{
+.eduExp {
   display: flex;
   justify-content: center;
-
 }
 
-.experiencia{
-  width: 50%;
+.experiencia {
+  width: 45%;
   padding-left: 5%;
   /* background-color: brown; */
   border-right: 1px solid #ffd369;
 }
-.educacion{
-  width: 50%;
-  padding-left: 5%;
+.educacion {
+  width: 57%;
+  padding-left: 3%;
   /* background-color: rebeccapurple; */
 }
-
+@media (max-width: 600px) {
+  .eduExp {
+    display: block;
+    justify-content: center;
+  }
+  .experiencia {
+    width: 100%;
+    padding-left: 5%;
+    /* background-color: brown; */
+    border-right: none;
+  }
+  .educacion {
+    width: 100%;
+    padding-left: 3%;
+    /* background-color: rebeccapurple; */
+  }
+}

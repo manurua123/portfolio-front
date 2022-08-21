@@ -2,7 +2,6 @@
   padding: 0px 5%;
   width: 100%;
   height: 100vh;
-
 }
 .home-conteiner {
   width: 100%;
@@ -20,7 +19,6 @@
 
 .home-img img {
   border-radius: 50%;
-
   width: 100%;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
@@ -40,22 +38,22 @@ h2 {
   font-weight: 500;
 }
 
-
-.argentinaPrograma{
+.argentinaPrograma {
   z-index: 999;
   border-radius: 10px;
   position: fixed;
   width: 7%;
-  top:1%;
+  top: 1%;
   left: 1%;
   background-color: #2fb5e5;
   padding: 10px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.argentinaPrograma img{
+.argentinaPrograma img {
   width: 100%;
 }
-.buttonDown{
+.buttonDown {
   left: 50%;
   top: 75vh;
   margin: auto;
@@ -63,9 +61,37 @@ h2 {
   position: absolute;
 }
 
-.buttonDown mat-icon{
+.buttonDown mat-icon {
   color: #ffd369;
   transform: scale(3);
+}
 
+@media (max-width: 600px) {
+  .argentinaPrograma {
+    width: 30%;
+  }
+  .home-conteiner {
+    width: 100%;
+    margin: 10% auto;
+    display: block;
+  }
+  .home-title {
+    width: 100%;
+    text-align: center;
+    padding-top: 1%;
+  }
+  .home-img {
+    width: 100%;
+  }
+  .home-detail {
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+  }
+  .buttonDown {
+    left: 45%;
+    top: 87vh;
+    margin: auto;
 
+  }
 }

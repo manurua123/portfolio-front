@@ -1,38 +1,21 @@
-<!-- <nav class="navbar">
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#experiencia">Experiencia</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#educacion">Educacion </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link" href="#skills">Skills</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#portfolio">Portfolio</a>
-    </li>
-  </ul>
-</nav> -->
 
 
 <nav class="socialNetwork">
   <ul class="nav nav-pills">
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-social" href="https://twitter.com/elporon"  target=”_blank”><i class="bi bi-twitter"></i> </a>
-    </li>
+    </li> -->
     <li class="nav-item">
       <a class="nav-social" href="https://github.com/manurua123" target=”_blank”><i class="bi bi-github"></i> </a>
     </li>
     <li class="nav-item">
       <a class="nav-social" href="https://www.linkedin.com/in/manuel-rua/" target=”_blank”><i class="bi bi-linkedin"></i> </a>
     </li>
-    <li class="nav-item" *ngIf="(userAuth$ | async)?.rol !== 'admin' ">
+    <li class="nav-item" matTooltip="Iniciar Sesion " *ngIf="(userAuth$ | async)?.rol !== 'admin' ">
       <a class="nav-social" (click)="openDialog()" ><mat-icon class="mat-18">login</mat-icon> </a>
     </li>
-    <li class="nav-item" *ngIf="(userAuth$ | async)?.rol == 'admin' ">
+    <li class="nav-item" matTooltip="Cerrar Sesion "  *ngIf="(userAuth$ | async)?.rol == 'admin' ">
       <a class="nav-social" (click)="logAut()" >   <mat-icon class="mat-18">logout</mat-icon>  </a>
     </li>
   </ul>

@@ -4,7 +4,6 @@ export interface Education {
   university: string;
   img?:string;
   link?: string;
-  description?: string;
   certification?:string;
   begin: Date ;
   progress?: number;

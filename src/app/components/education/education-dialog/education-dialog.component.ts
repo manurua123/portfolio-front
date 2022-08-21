@@ -16,7 +16,7 @@ export class EducationDialogComponent implements OnInit {
     university: '',
     img: '',
     link: '',
-    description: '',
+
     certification: '',
     begin: new Date(),
     progress: 0,
@@ -32,25 +32,14 @@ export class EducationDialogComponent implements OnInit {
     this.requiredForm = this.fb.group({
       career: ['', [Validators.required, Validators.min(5)]],
       university: ['', [Validators.required, Validators.min(5)]],
-      img: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.pattern(this.url),
-        ],
-      ],
-      description: ['', [Validators.required, Validators.min(5)]],
+      img: ['', [Validators.min(5)]],
       progress: [0, Validators.required],
-      link: [
-        '',
-        [Validators.required, Validators.min(10), Validators.pattern(this.url)],
-      ],
+      link: ['', [Validators.required, Validators.min(10), Validators.pattern(this.url)]],
       certification: ['', [Validators.min(10), Validators.pattern(this.url)]],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   save() {
     this.educationService.save(this.dataRef).subscribe();
     this.dialogRef.close();

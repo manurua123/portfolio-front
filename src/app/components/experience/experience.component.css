@@ -11,11 +11,11 @@
 .experence .dates {
   text-align: center;
   padding-top: 1em;
-  width: 10%;
+  width: 20%;
   float: left;
 }
 .experence .position {
-  width: 90%;
+  width: 80%;
   padding-left: 5%;
   float: left;
 }
@@ -23,6 +23,7 @@
   margin: 0px;
   margin-bottom: 0px;
   font-size: x-large;
+  font-weight: 600;
 }
 .experence .position a {
   text-decoration: none;
@@ -34,13 +35,55 @@
   background-color: transparent;
 }
 
-
-.section-title{
+.section-title {
   font-size: xx-large;
   font-weight: 700;
   margin-bottom: 2em;
 }
-.add{
-  position:absolute;
+.add {
+  position: absolute;
   right: 10%;
+}
+
+@media (max-width: 600px) {
+  .experence {
+    padding-bottom: 5em;
+  }
+  .experence .dates {
+    text-align: center;
+    padding-top: 1em;
+    width: 28%;
+    float: left;
+    font-size: small;
+  }
+  .experence .position {
+    width: 70%;
+    padding-left: 2%;
+    float: left;
+  }
+  .experence .position h3 {
+    margin: 0px;
+    margin-bottom: 0px;
+    font-size: x-large;
+
+  }
+  .experence .position a {
+    text-decoration: none;
+    color: #eeeeee;
+  }
+  .experence .position a:hover {
+    text-decoration: none;
+    color: #ffd369;
+    background-color: transparent;
+  }
+
+  .section-title {
+    font-size: xx-large;
+    font-weight: 700;
+    margin-bottom: 2em;
+  }
+  .add {
+    position: absolute;
+    right: 10%;
+  }
 }

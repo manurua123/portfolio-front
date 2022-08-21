@@ -16,13 +16,10 @@ export class SkillsDialogComponent implements OnInit {
   dataRef: Skill = {
     name: '',
     img: '',
-    link: '',
     category: '',
     progress: 0,
   };
 
-  category = ['Diseño', 'WEB', 'MGMT'];
-  url = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
   requiredForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -31,13 +28,15 @@ export class SkillsDialogComponent implements OnInit {
   ) {
     this.requiredForm = this.fb.group({
       name: ['', [Validators.required, Validators.min(5)]],
-      img: ['', [Validators.min(10), Validators.pattern(this.url)]],
-      link: ['', Validators.pattern(this.url)],
+      img: ['', [Validators.min(10),]],
+      category:[ '',[Validators.required]],
+      progress:[ 0,[Validators.required]],
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   save() {
+    console.log(this.dataRef)
     this.skillService.save(this.dataRef).subscribe();
     this.dialogRef.close();
   }

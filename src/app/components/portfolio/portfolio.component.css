@@ -1,4 +1,18 @@
 .conteiner{
-  padding: 40vh;
+margin-top: 10vh;
+margin-bottom: 10vh;
+padding: 5vh 5%;
+margin: 5% auto;
+}
+.section-title{
+  font-size: xx-large;
+  font-weight: 700;
+  margin-bottom: 2em;
+}
+mat-card img{
   margin: auto;
+  width: 100%;
+}
+mat-card-content{
+  padding-bottom: 2em;
 }

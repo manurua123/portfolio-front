@@ -2,7 +2,7 @@
 <form [formGroup]="requiredForm" (ngSubmit)="save()"  novalidate>
   <mat-form-field appearance="outline">
     <mat-label>Titulo</mat-label>
-    <input required="true" [(ngModel)]="this.dataRef.name" formControlName="name" matInput
+    <input  [(ngModel)]="this.dataRef.name" formControlName="name" matInput
        type="text" maxlength="60" />
        <mat-error *ngIf="hasError('name', 'required')">Campo Requerido</mat-error>
        <mat-error *ngIf="hasError('name', 'minlength')">El titulo es demaciado corto </mat-error>
@@ -16,7 +16,7 @@
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Seleccione una categoria</mat-label>
-    <mat-select [(ngModel)]="this.dataRef.category"  formControlName="category" required="true">
+    <mat-select [(ngModel)]="this.dataRef.category"  formControlName="category" >
       <mat-option value="Diseño">Diseño</mat-option>
       <mat-option value="Development">Development </mat-option>
       <mat-option value="Management">Management</mat-option>

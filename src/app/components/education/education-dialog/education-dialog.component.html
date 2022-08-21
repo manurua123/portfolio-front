@@ -3,46 +3,37 @@
   <mat-form-field appearance="outline">
     <mat-label>Titulo</mat-label>
 
-    <input required="true" [(ngModel)]="this.dataRef.career" formControlName="career" matInput
-       type="text" maxlength="60" />
-       <mat-error *ngIf="hasError('career', 'required')">Campo Requerido</mat-error>
-       <mat-error *ngIf="hasError('career', 'minlength')">El titulo es demaciado corto </mat-error>
+    <input required="true" [(ngModel)]="this.dataRef.career" formControlName="career" matInput type="text"
+      maxlength="60" />
+    <mat-error *ngIf="hasError('career', 'required')">Campo Requerido</mat-error>
+    <mat-error *ngIf="hasError('career', 'minlength')">El titulo es demaciado corto </mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Institucion</mat-label>
-    <input required="true" [(ngModel)]="this.dataRef.university" formControlName="university" matInput
-      type="text" maxlength="60" />
-      <mat-error *ngIf="hasError('university', 'required')">Campo Requerido</mat-error>
-      <mat-error *ngIf="hasError('university', 'minlength')">El nombre es demaciado corto </mat-error>
+    <input required="true" [(ngModel)]="this.dataRef.university" formControlName="university" matInput type="text"
+      maxlength="60" />
+    <mat-error *ngIf="hasError('university', 'required')">Campo Requerido</mat-error>
+    <mat-error *ngIf="hasError('university', 'minlength')">El nombre es demaciado corto </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Url Institucion</mat-label>
-    <input [(ngModel)]="this.dataRef.link" formControlName="link" matInput
-       type="text" maxlength="120" />
-       <mat-error *ngIf="hasError('link', 'required')">Campo Requerido</mat-error>
-      <mat-error *ngIf="hasError('link', 'pattern')">No es un link valido </mat-error>
+    <input [(ngModel)]="this.dataRef.link" formControlName="link" matInput type="text" maxlength="120" />
+    <mat-error *ngIf="hasError('link', 'required')">Campo Requerido</mat-error>
+    <mat-error *ngIf="hasError('link', 'pattern')">No es un link valido </mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Url imagen Institucion</mat-label>
-    <input [(ngModel)]="this.dataRef.img" formControlName="img" matInput
-       type="text" maxlength="120" />
-       <mat-error *ngIf="hasError('img', 'required')">Campo Requerido</mat-error>
-       <mat-error *ngIf="hasError('img', 'pattern')">No es un link valido </mat-error>
+    <input [(ngModel)]="this.dataRef.img" formControlName="img" matInput type="text" maxlength="120" />
+    <mat-error *ngIf="hasError('img', 'required')">Campo Requerido</mat-error>
+    <mat-error *ngIf="hasError('img', 'pattern')">No es un link valido </mat-error>
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Descripcion</mat-label>
-    <textarea style="resize: none" [(ngModel)]="this.dataRef.description" formControlName="description"
-      matInput  type="text" maxlength="400"></textarea>
-      <mat-error *ngIf="hasError('description', 'required')">Campo Requerido</mat-error>
-      <mat-error *ngIf="hasError('description', 'minlength')">No es un link valido </mat-error>
-  </mat-form-field>
-<div style="width: 45%; margin-left: 5%;float: right;">
-  <mat-label >Progreso</mat-label>
-  <mat-slider style="width: 100%" [displayWith]="formatLabel" [(ngModel)]="this.dataRef.progress"
-  formControlName="progress" thumbLabel min="1" max="100"> </mat-slider>
-</div>
+  <div style="width: 45%; margin-left: 5%;float: right;">
+    <mat-label>Progreso</mat-label>
+    <mat-slider style="width: 100%" [displayWith]="formatLabel" [(ngModel)]="this.dataRef.progress"
+      formControlName="progress" thumbLabel min="1" max="100"> </mat-slider>
+  </div>
   <mat-form-field style="width: 45%; margin-right: 5%">
     <mat-label>Fecha de ingreo</mat-label>
     <input required="true" [ngModelOptions]="{ standalone: true }" matInput [matDatepicker]="begin"
@@ -52,9 +43,9 @@
   </mat-form-field>
   <mat-form-field appearance="outline" *ngIf="dataRef.progress==100">
     <mat-label>Certificado</mat-label>
-    <input style="resize: none" [(ngModel)]="this.dataRef.certification"
-      matInput  type="text" maxlength="400" [ngModelOptions]="{standalone: true}"/>
-      <mat-error *ngIf="hasError('certification', 'pattern')">No es un link valido </mat-error>
+    <input style="resize: none" [(ngModel)]="this.dataRef.certification" matInput type="text" maxlength="400"
+      [ngModelOptions]="{standalone: true}" />
+    <mat-error *ngIf="hasError('certification', 'pattern')">No es un link valido </mat-error>
   </mat-form-field>
 
   <div class="botones">
