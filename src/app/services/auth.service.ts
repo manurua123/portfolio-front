@@ -8,7 +8,7 @@ import { User } from '../models/user';
 
 
 export class AuthSerivice {
-  private resourceURL = ' http://localhost:8080/login/';
+  private resourceURL = 'https://porfolio-rua.herokuapp.com/login/';
 
   private userObservable: BehaviorSubject<any> = new BehaviorSubject({})
   constructor(private http: HttpClient) {

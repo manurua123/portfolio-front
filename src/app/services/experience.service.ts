@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 export class ExperienceService {
-  private resourceURL = ' http://localhost:8080/experience/';
+  private resourceURL = ' https://porfolio-rua.herokuapp.com/experience/';
 
   constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar) { }
 

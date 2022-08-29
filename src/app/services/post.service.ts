@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 
 export class PostService {
-  private resourceURL = ' http://localhost:8080/post/';
+  private resourceURL = 'https://porfolio-rua.herokuapp.com/post/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,8 +16,8 @@ export class PostService {
     return this.httpClient.get<Post[]>(this.resourceURL + "all");
   }
 
-  save(educacion: Post): Observable<any> {
-    return this.httpClient.post<any>(this.resourceURL + 'create', educacion);
+  save(post: Post): Observable<any> {
+    return this.httpClient.post<any>(this.resourceURL + 'create', post);
 
   }
 

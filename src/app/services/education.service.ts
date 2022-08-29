@@ -9,7 +9,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 export class EducationService {
-  private resourceURL = ' http://localhost:8080/education/';
+  private resourceURL = ' https://porfolio-rua.herokuapp.com/education/';
 
   constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar) { }
 
